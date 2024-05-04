@@ -1,0 +1,10 @@
+.mainHeading{
+    margin: 0;
+    background: radial-gradient( circle 986.6px at 10% 20%, #ED213A 0%, #93291E );
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

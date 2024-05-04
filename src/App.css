@@ -1,5 +1,13 @@
 main{
-  background-color: #070707;
   height: 100vh;
   margin:0 auto;
+
+}
+.container{
+  background-color: #070707;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem;
 }

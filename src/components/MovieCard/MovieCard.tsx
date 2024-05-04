@@ -1,11 +1,22 @@
 import React from 'react'
 import styles from './MovieCard.module.css'
 
-export default function MovieCard() {
+
+interface MovieCardProps {
+    name: string;
+    image:string;
+  }
+
+  const MovieCard: React.FC<MovieCardProps> =({name,image})=> {
+
+
   return (
-    <div>
-        <img/>
-        <h2>Movie Title</h2>
+    <div className={styles.cardMain}>
+        <img className={styles.image} src={image}/>
+        <h2 className={styles.title}>{name}</h2>
     </div>
   )
 }
+
+
+export default MovieCard;

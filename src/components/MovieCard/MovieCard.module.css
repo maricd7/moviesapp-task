@@ -1,0 +1,25 @@
+.title{
+    margin: 0;
+    max-width: 100%;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    min-height: 6rem;
+}
+.image{
+    width: 10rem;
+    border-radius: 0.5rem;
+}
+.cardMain{
+    padding:1rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #1a1a1a 0%, #333333 100%);
+    width: 10rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardMain:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,19 @@
+.tabBtn{
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: 0;
+}
+.active{
+    background: radial-gradient( circle 986.6px at 10% 20%, #ED213A 0%, #93291E );
+    color:white;
+}
+.tabContainer{
+    margin: 2rem 0;
+    display: flex;
+    background: radial-gradient( circle 986.6px at 10% 20%, #ED213A 0%, #93291E );
+    border-radius: 0.5rem;
+    max-width: fit-content;
+}
