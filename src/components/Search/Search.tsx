@@ -8,7 +8,7 @@ function Search() {
     currentInput:string;
   }
   const searchInputRef = useRef<HTMLInputElement>(null)
-  const {searchMovies} = useMovieContext()
+  const {searchMovies,getMovies,getShows,tab} = useMovieContext()
 
   function handleSearch(){
     let currentInput = searchInputRef.current?.value
@@ -16,7 +16,7 @@ function Search() {
     if(currentInput  && currentInput?.length >= 3){
       searchMovies(currentInput)
     }else{
-      return
+       tab === 'shows' ? getShows() :getMovies()
     }
   }
   return (
