@@ -15,19 +15,20 @@ function ResultsGrid() {
     description: string;
     original_title:string;
     poster_path:string;
+    title:string;
   }
 
 
   // getting data from context
   const { data } = useMovieContext();
-
+  console.log('data data data', data)
   return (
     <div className={styles.mainContainer}>
       <Tab />
       <ul className={styles.cardsContainer}>
       {data.length ? (
         data.map((entry: Movie, index: number) => (
-          <li><MovieCard key={index} name={entry.name || entry.original_title} image={'https://image.tmdb.org/t/p/w500/'+entry.poster_path}/></li>
+          <li key={index}><MovieCard  name={entry.name || entry.original_title || entry.title} image={'https://image.tmdb.org/t/p/w500/'+entry.poster_path}/></li>
         ))
       ) : (
         <span>Loading</span>

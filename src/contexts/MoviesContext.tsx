@@ -9,6 +9,7 @@ interface DataInterface {
     description: string;
     original_title:string;
     poster_path:string;
+    title:string;
 }
 
 // Context data type
@@ -18,21 +19,25 @@ interface MovieContextType {
     tab: string;
     setData: (data: DataInterface[]) => void;
     getMovies: () => void;
+    searchMovies:(keywordSearch: string)=>void;
+    keywordSearch:string;
 }
 
 const MovieContext = createContext<MovieContextType>({
     data: [],
     tab: '',
+    keywordSearch:'',
     setTab: () => {},
     setData: () => {},
     getMovies: () => {},
+    searchMovies:()=>{},
 });
 
 // Creating context provider
 export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [data, setData] = useState<DataInterface[]>([]);
     const [tab, setTab] = useState<string>('shows');
-
+    const [keywordSearch,setKeywordSearch] = useState('godfather')
     // Loading content condition
     useEffect(() => {
         console.log('tab', tab)
@@ -85,6 +90,34 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         }
     };
 
+
+    //search logic
+    const searchMovies = async (keywordSearch:string)=>{
+
+        const options = {
+            method: 'GET',
+            url: 'https://api.themoviedb.org/3/search/movie',
+            params: {page: '1' ,
+            query: keywordSearch,
+            },
+            headers: {
+              accept: 'application/json',
+              Authorization: `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`
+            }
+          };
+          
+          axios
+            .request(options)
+            .then(function (response) {
+              setData(response.data?.results)
+              console.log(response.data?.results);
+            })
+            .catch(function (error) {
+              console.error(error);
+            });
+    }
+    
+
     // Destructure context value
     const contextValue: MovieContextType = {
         data,
@@ -92,6 +125,8 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         setTab,
         setData,
         getMovies,
+        searchMovies,
+        keywordSearch,
     };
 
     return (
