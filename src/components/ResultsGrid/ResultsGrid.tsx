@@ -5,7 +5,7 @@ import Tab from '../Tab/Tab'
 
 function ResultsGrid() {
     const {data} = useMovieContext()
-    console.log(data)
+    
   return (
     <div>
         <Tab/>
