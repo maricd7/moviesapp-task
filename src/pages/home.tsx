@@ -1,8 +1,11 @@
 import React from 'react'
+import ResultsGrid from '../components/ResultsGrid/ResultsGrid'
 
 function Home() {
   return (
-    <div>Home</div>
+    <main>
+        <ResultsGrid/>
+    </main>
   )
 }
 
