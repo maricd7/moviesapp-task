@@ -32,7 +32,7 @@ function Search() {
       return () => clearTimeout(timer);
       }
 
-  }, [inputValue,tab])
+  }, [inputValue])
   return (
     <div className={styles.inputContainer}>
       <Icon className={styles.inputIcon} icon="material-symbols:search" width="24" height="24"  style={{color: '#fff'}} />
