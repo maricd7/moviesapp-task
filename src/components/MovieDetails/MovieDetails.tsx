@@ -2,21 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useMovieContext } from "../../contexts/MoviesContext";
 import styles from "./MovieDetails.module.css";
-import { useParams } from "react-router-dom"; // Import useParams hook
-import YouTube from "react-youtube";
-import Heading from "../common/Heading/Heading";
-import DetailsHeading from "../common/DetailsHeading/DetailsHeading";
-import Paragraph from "../common/Paragraph/Paragraph";
-import Genre from "../common/Genre/Genre";
+import { useParams } from "react-router-dom"; 
 import DetailsHeader from "./DetailsHeader/DetailsHeader";
 import DetailsOverview from "./DetailsOverview/DetailsOverview";
 
-interface MovieDetailsProps {
-  text: string;
-  genre: string;
-  index: number;
-  genresArray:{name:string,original_name:string}[]
-}
+
 function MovieDetails() {
   const { tab } = useMovieContext();
   const { id } = useParams(); // Use useParams to get type param to have consistent loads since some ids are the same for movies and tv
@@ -28,7 +18,6 @@ function MovieDetails() {
 
   //getting data for movie/tv show
   const fetchData = async () => {
-    console.log("fetch dataaaa", paramsType);
     try {
       const response = await axios.get(
         `https://api.themoviedb.org/3/${paramsType}/${id}`,

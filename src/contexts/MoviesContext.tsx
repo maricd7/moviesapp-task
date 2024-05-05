@@ -63,7 +63,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
             keywordSearch.length ? searchMovies(keywordSearch) :getMovies();
             setType('movie')
         } else {
-            keywordSearch.length ? searchShows(keywordSearch) :getShows();
+            keywordSearch.length  ? searchShows(keywordSearch) :getShows();
             setType('tv')
         }
     }, []);

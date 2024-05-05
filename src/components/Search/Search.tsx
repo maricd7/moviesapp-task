@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Search.module.css'
 import {Icon} from '@iconify/react'
 import { useMovieContext } from '../../contexts/MoviesContext'
@@ -25,7 +25,7 @@ function Search() {
 
 
    useEffect(() => {
-      if(inputValue.length){
+      if(inputValue.length >= 3){
         setKeywordSearch(inputValue)
         const timer = setTimeout(()=>{
           // console.log('search started after 1 second')
