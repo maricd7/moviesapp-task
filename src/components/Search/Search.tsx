@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Search.module.css'
 import {Icon} from '@iconify/react'
 import { useMovieContext } from '../../contexts/MoviesContext'
 
 
 function Search() {
-  const {searchMovies,searchShows,getMovies,getShows,tab,setData, setKeywordSearch} = useMovieContext()
-  const [delaySearch, setDelaySearch] = useState();
+  const {searchMovies,searchShows,getMovies,getShows,tab, setKeywordSearch} = useMovieContext()
   const [inputValue,setInputValue] = useState('')
   
   
@@ -14,7 +13,6 @@ function Search() {
   //handle search function
   function handleSearch(){
     if(inputValue  && inputValue?.length >= 3){
-      setData([])
       tab ==='movies' ? searchMovies(inputValue) : searchShows(inputValue)
     }else{
        tab === 'shows' ? getShows() :getMovies()
@@ -32,7 +30,7 @@ function Search() {
       return () => clearTimeout(timer);
       }
 
-  }, [inputValue])
+  }, [inputValue,tab])
   return (
     <div className={styles.inputContainer}>
       <Icon className={styles.inputIcon} icon="material-symbols:search" width="24" height="24"  style={{color: '#fff'}} />

@@ -45,16 +45,18 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     const [data, setData] = useState<DataInterface[]>([]);
     const [tab, setTab] = useState<string>('shows');
     const [keywordSearch,setKeywordSearch] = useState('')
+
+
+
     // Loading content condition
     useEffect(() => {
         console.log('keyword', keywordSearch)
         if (tab === 'movies') {
-            keywordSearch ? searchMovies(keywordSearch) :getMovies();
+            keywordSearch.length ? searchMovies(keywordSearch) :getMovies();
         } else {
-            keywordSearch ? searchShows(keywordSearch) :getShows();
+            keywordSearch.length ? searchShows(keywordSearch) :getShows();
         }
-    }, [tab]);
-    console.log(data,'moviess')
+    }, []);
 
     // Function for getting top rated movies
     const getMovies = async () => {
