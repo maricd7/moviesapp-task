@@ -16,6 +16,7 @@ function ResultsGrid() {
     poster_path: string;
     title: string;
   }
+ const {type} =  useMovieContext()
 
   // getting data from context
   const { data } = useMovieContext();
@@ -27,7 +28,7 @@ function ResultsGrid() {
         {data.length ? (
           data.map((entry: Movie, index: number) => (
             <li key={index}>
-              <Link to={`/details/${entry.id}`}>
+              <Link to={`/details/${type}/${entry.id}`}>
               <MovieCard
                 name={entry.name || entry.original_title || entry.title}
                 image={"https://image.tmdb.org/t/p/w500/" + entry.poster_path}

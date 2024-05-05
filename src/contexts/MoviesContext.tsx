@@ -51,9 +51,9 @@ const MovieContext = createContext<MovieContextType>({
 export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [data, setData] = useState<DataInterface[]>([]);
     const [tab, setTab] = useState<string>('shows');
-    const [keywordSearch,setKeywordSearch] = useState('')
+    const [keywordSearch,setKeywordSearch] = useState<string>('')
     const [details,setDetails] = useState({})
-    const [type,setType] = useState('')
+    const [type,setType] = useState<string>('')
 
     // Loading content condition
     useEffect(() => {
