@@ -15,6 +15,8 @@ function ResultsGrid() {
     original_title: string;
     poster_path: string;
     title: string;
+    overview:string;
+    
   }
  const {type} =  useMovieContext()
 
@@ -24,6 +26,7 @@ function ResultsGrid() {
   return (
     <div className={styles.mainContainer}>
       <Tab />
+      
       <ul className={styles.cardsContainer}>
         {data.length ? (
           data.map((entry: Movie, index: number) => (
@@ -32,6 +35,7 @@ function ResultsGrid() {
               <MovieCard
                 name={entry.name || entry.original_title || entry.title}
                 image={"https://image.tmdb.org/t/p/w500/" + entry.poster_path}
+                overview={entry.overview}
               />
               </Link>
             </li>

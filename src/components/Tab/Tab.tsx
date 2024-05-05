@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMovieContext } from '../../contexts/MoviesContext'
 import styles from './Tab.module.css'
 
 export default function Tab() {
-    const {setTab,data,setType} = useMovieContext()
+    const {setTab,data,setType,tab} = useMovieContext()
     const [activeTab, setActiveTab] = useState('shows');
 
     const handleClick = (tab:string)=>{

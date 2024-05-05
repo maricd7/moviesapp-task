@@ -10,6 +10,7 @@ interface DataInterface {
     original_title:string;
     poster_path:string;
     title:string;
+    overview:string;
 }
 
 // Context data type

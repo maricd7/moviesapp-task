@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './Search.module.css'
 import {Icon} from '@iconify/react'
 import { useMovieContext } from '../../contexts/MoviesContext'
 
 
 function Search() {
-  const {searchMovies,searchShows,getMovies,getShows,tab, setKeywordSearch} = useMovieContext()
-  const [inputValue,setInputValue] = useState('')
+  const {searchMovies,searchShows,getMovies,getShows,tab, setKeywordSearch,keywordSearch} = useMovieContext()
+  const [inputValue,setInputValue] = useState(keywordSearch || '')
   
-  
-  
+  const searchRef = React.useRef<HTMLInputElement>(null)
+
   //handle search function
   function handleSearch(){
     if(inputValue  && inputValue?.length >= 3){
       tab ==='movies' ? searchMovies(inputValue) : searchShows(inputValue)
     }
   }
+  useEffect(() => {
+    if (keywordSearch.length && searchRef.current) { 
+      console.log(inputValue);
+      searchRef.current.value = keywordSearch;
+    }
+  }, [keywordSearch, searchRef]);
+
+
+
+
    useEffect(() => {
       if(inputValue.length){
         setKeywordSearch(inputValue)
@@ -36,7 +46,7 @@ function Search() {
   return (
     <div className={styles.inputContainer}>
       <Icon className={styles.inputIcon} icon="material-symbols:search" width="24" height="24"  style={{color: '#fff'}} />
-      <input onChange={(e)=>setInputValue(e.target.value)} className={styles.inputField} placeholder='Search For Movies'/>
+      <input onChange={(e)=>setInputValue(e.target.value)} className={styles.inputField} placeholder='Search For Movies' ref={searchRef}/>
     </div>
   )
 }

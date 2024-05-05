@@ -4,11 +4,12 @@
     font-size: 1.5rem;
     color: white;
     font-weight: 600;
-    min-height: 6rem;
+    /* min-height: 6rem; */
 }
 .image{
     width: 10rem;
     border-radius: 0.5rem;
+    height: 14rem;
 }
 .cardMain{
     padding:1rem;
@@ -17,8 +18,13 @@
     width: 10rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 28rem;
 }
-
+.cardOverview{
+    color: white;
+    text-decoration: none;
+    height: 64px;
+}
 .cardMain:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
