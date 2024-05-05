@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
+import React, { createContext, useState, useContext, ReactNode, useEffect, Dispatch, SetStateAction } from "react";
 import axios from "axios";
 
 // Define the interface for each movie or show
@@ -17,6 +17,7 @@ interface MovieContextType {
     data: DataInterface[];
     setTab: (tab: string) => void;
     tab: string;
+    type:string;
     setData: (data: DataInterface[]) => void;
     getMovies: () => void;
     getShows: () => void;
@@ -24,7 +25,8 @@ interface MovieContextType {
     searchShows:(keywordSearch:string)=>void;
     keywordSearch:string;
     setKeywordSearch:(param:string) =>void;
-    details:{}
+    details:{};
+    setDetails: Dispatch<SetStateAction<{}>>;
 }
 
 const MovieContext = createContext<MovieContextType>({
@@ -32,6 +34,7 @@ const MovieContext = createContext<MovieContextType>({
     tab: '',
     keywordSearch:'',
     details:{},
+    type:'',
     setTab: () => {},
     setData: () => {},
     getMovies: () => {},
@@ -39,7 +42,7 @@ const MovieContext = createContext<MovieContextType>({
     searchMovies:()=>{},
     searchShows:()=>{},
     setKeywordSearch:()=>{},
-
+    setDetails:()=>{}
 });
 
 // Creating context provider
@@ -47,16 +50,18 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     const [data, setData] = useState<DataInterface[]>([]);
     const [tab, setTab] = useState<string>('shows');
     const [keywordSearch,setKeywordSearch] = useState('')
-    const [details,setDetails] = useState([{}])
-
+    const [details,setDetails] = useState({})
+    const [type,setType] = useState('')
 
     // Loading content condition
     useEffect(() => {
         console.log('keyword', keywordSearch)
         if (tab === 'movies') {
             keywordSearch.length ? searchMovies(keywordSearch) :getMovies();
+            setType('movie')
         } else {
             keywordSearch.length ? searchShows(keywordSearch) :getShows();
+            setType('tv')
         }
     }, []);
 
@@ -165,6 +170,8 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         searchShows,
         setKeywordSearch,
         details,
+        setDetails,
+        type,
     };
 
     return (
