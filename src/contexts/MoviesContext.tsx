@@ -24,12 +24,14 @@ interface MovieContextType {
     searchShows:(keywordSearch:string)=>void;
     keywordSearch:string;
     setKeywordSearch:(param:string) =>void;
+    details:{}
 }
 
 const MovieContext = createContext<MovieContextType>({
     data: [],
     tab: '',
     keywordSearch:'',
+    details:{},
     setTab: () => {},
     setData: () => {},
     getMovies: () => {},
@@ -45,7 +47,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     const [data, setData] = useState<DataInterface[]>([]);
     const [tab, setTab] = useState<string>('shows');
     const [keywordSearch,setKeywordSearch] = useState('')
-
+    const [details,setDetails] = useState([{}])
 
 
     // Loading content condition
@@ -99,7 +101,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     };
 
 
-    //search movies req
+    //Function for searching movies
     const searchMovies = async (keywordSearch:string)=>{
 
         const options = {
@@ -125,7 +127,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     }
     
 
-    //search shows req
+    //Function for searching shows
     const searchShows = (keywordSearch:string)=>{
         const options = {
             method: 'GET',
@@ -148,6 +150,8 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
             });
     }
 
+
+
     // Destructure context value
     const contextValue: MovieContextType = {
         data,
@@ -160,6 +164,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         keywordSearch,
         searchShows,
         setKeywordSearch,
+        details,
     };
 
     return (

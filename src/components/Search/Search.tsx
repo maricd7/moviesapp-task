@@ -14,8 +14,6 @@ function Search() {
   function handleSearch(){
     if(inputValue  && inputValue?.length >= 3){
       tab ==='movies' ? searchMovies(inputValue) : searchShows(inputValue)
-    }else{
-       tab === 'shows' ? getShows() :getMovies()
     }
   }
    useEffect(() => {
@@ -28,6 +26,10 @@ function Search() {
         
       //clear the timer
       return () => clearTimeout(timer);
+      }
+      //load top rated on mount if there is no input
+      else{
+        tab === 'shows' ? getShows() :getMovies()
       }
 
   }, [inputValue,tab])
