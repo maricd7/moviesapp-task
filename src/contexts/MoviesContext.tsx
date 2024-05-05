@@ -21,6 +21,7 @@ interface MovieContextType {
     getMovies: () => void;
     getShows: () => void;
     searchMovies:(keywordSearch: string)=>void;
+    searchShows:(keywordSearch:string)=>void;
     keywordSearch:string;
 }
 
@@ -33,6 +34,7 @@ const MovieContext = createContext<MovieContextType>({
     getMovies: () => {},
     getShows: () => {},
     searchMovies:()=>{},
+    searchShows:()=>{},
 
 });
 
@@ -94,7 +96,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
     };
 
 
-    //search logic
+    //search movies req
     const searchMovies = async (keywordSearch:string)=>{
 
         const options = {
@@ -113,13 +115,35 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
             .request(options)
             .then(function (response) {
               setData(response.data?.results)
-              console.log(response.data?.results);
             })
             .catch(function (error) {
               console.error(error);
             });
     }
     
+
+    //search shows req
+    const searchShows = (keywordSearch:string)=>{
+        const options = {
+            method: 'GET',
+            url: 'https://api.themoviedb.org/3/search/tv',
+            params: {include_adult: 'false', language: 'en-US', page: '1', query: keywordSearch,},
+            headers: {
+              accept: 'application/json',
+              Authorization: `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`
+            }
+          };
+          
+          axios
+            .request(options)
+            .then(function (response) {
+              console.log(response.data);
+              setData(response.data?.results)
+            })
+            .catch(function (error) {
+              console.error(error);
+            });
+    }
 
     // Destructure context value
     const contextValue: MovieContextType = {
@@ -131,6 +155,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         getShows,
         searchMovies,
         keywordSearch,
+        searchShows,
     };
 
     return (
