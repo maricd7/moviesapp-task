@@ -5,7 +5,7 @@ import { useMovieContext } from '../../contexts/MoviesContext'
 
 
 function Search() {
-  const {searchMovies,searchShows,getMovies,getShows,tab} = useMovieContext()
+  const {searchMovies,searchShows,getMovies,getShows,tab,setData, setKeywordSearch} = useMovieContext()
   const [delaySearch, setDelaySearch] = useState();
   const [inputValue,setInputValue] = useState('')
   
@@ -14,6 +14,7 @@ function Search() {
   //handle search function
   function handleSearch(){
     if(inputValue  && inputValue?.length >= 3){
+      setData([])
       tab ==='movies' ? searchMovies(inputValue) : searchShows(inputValue)
     }else{
        tab === 'shows' ? getShows() :getMovies()
@@ -21,6 +22,7 @@ function Search() {
   }
    useEffect(() => {
       if(inputValue.length){
+        setKeywordSearch(inputValue)
         const timer = setTimeout(()=>{
           // console.log('search started after 1 second')
           handleSearch()
@@ -30,7 +32,7 @@ function Search() {
       return () => clearTimeout(timer);
       }
 
-  }, [inputValue])
+  }, [inputValue,tab])
   return (
     <div className={styles.inputContainer}>
       <Icon className={styles.inputIcon} icon="material-symbols:search" width="24" height="24"  style={{color: '#fff'}} />

@@ -23,6 +23,7 @@ interface MovieContextType {
     searchMovies:(keywordSearch: string)=>void;
     searchShows:(keywordSearch:string)=>void;
     keywordSearch:string;
+    setKeywordSearch:(param:string) =>void;
 }
 
 const MovieContext = createContext<MovieContextType>({
@@ -35,6 +36,7 @@ const MovieContext = createContext<MovieContextType>({
     getShows: () => {},
     searchMovies:()=>{},
     searchShows:()=>{},
+    setKeywordSearch:()=>{},
 
 });
 
@@ -42,15 +44,14 @@ const MovieContext = createContext<MovieContextType>({
 export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [data, setData] = useState<DataInterface[]>([]);
     const [tab, setTab] = useState<string>('shows');
-    const [keywordSearch,setKeywordSearch] = useState('godfather')
+    const [keywordSearch,setKeywordSearch] = useState('')
     // Loading content condition
     useEffect(() => {
-        console.log('tab', tab)
+        console.log('keyword', keywordSearch)
         if (tab === 'movies') {
-            getMovies();
-            console.log(data)
+            keywordSearch ? searchMovies(keywordSearch) :getMovies();
         } else {
-            getShows();
+            keywordSearch ? searchShows(keywordSearch) :getShows();
         }
     }, [tab]);
     console.log(data,'moviess')
@@ -156,6 +157,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         searchMovies,
         keywordSearch,
         searchShows,
+        setKeywordSearch,
     };
 
     return (

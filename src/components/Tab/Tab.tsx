@@ -9,7 +9,6 @@ export default function Tab() {
     const handleClick = (tab:string)=>{
         setTab(tab)
         setActiveTab(tab)
-        console.log('data',data)
     }   
   return (
     <div className={styles.tabContainer}>
