@@ -3,12 +3,13 @@ import { useMovieContext } from '../../contexts/MoviesContext'
 import styles from './Tab.module.css'
 
 export default function Tab() {
-    const {setTab,data} = useMovieContext()
+    const {setTab,data,setType} = useMovieContext()
     const [activeTab, setActiveTab] = useState('shows');
 
     const handleClick = (tab:string)=>{
         setTab(tab)
         setActiveTab(tab)
+        tab ==='shows' ? setType('tv') : setType('movie')
     }   
   return (
     <div className={styles.tabContainer}>

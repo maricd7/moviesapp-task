@@ -9,7 +9,7 @@ interface MovieDetailsProps {
 }
 
 function MovieDetails({}: MovieDetailsProps) {
-  const { type } = useMovieContext();
+  const { type,tab } = useMovieContext();
   const { id } = useParams(); // Use useParams to get URL parameters
   const [details, setDetails] = useState<any>(null);
 
@@ -26,8 +26,11 @@ function MovieDetails({}: MovieDetailsProps) {
         }
       );
       response.data !==null ?  setDetails(response.data): console.log(response.data, "Error response");
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error);
+      console.log('error fetching'
+      )
     }
   };
   
@@ -35,7 +38,7 @@ function MovieDetails({}: MovieDetailsProps) {
   useEffect(() => {
     console.log("type", type);
     type.length ?  fetchData(): console.log('error fethcing')
-  }, [type,id]); 
+  }, [type,id,tab]); 
   
 
 

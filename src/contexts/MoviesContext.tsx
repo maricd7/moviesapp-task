@@ -19,6 +19,7 @@ interface MovieContextType {
     tab: string;
     type:string;
     setData: (data: DataInterface[]) => void;
+    setType:(type:string)=>void
     getMovies: () => void;
     getShows: () => void;
     searchMovies:(keywordSearch: string)=>void;
@@ -42,7 +43,8 @@ const MovieContext = createContext<MovieContextType>({
     searchMovies:()=>{},
     searchShows:()=>{},
     setKeywordSearch:()=>{},
-    setDetails:()=>{}
+    setDetails:()=>{},
+    setType:()=>{}
 });
 
 // Creating context provider
@@ -172,6 +174,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
         details,
         setDetails,
         type,
+        setType,
     };
 
     return (
