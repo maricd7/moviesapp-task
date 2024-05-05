@@ -1,17 +1,17 @@
-import React from 'react'
-import styles from './Genres.module.css'
-import Genre from '../../common/Genre/Genre'
+import React from "react";
+import styles from "./Genres.module.css";
+import Genre from "../../common/Genre/Genre";
 
-
-interface genresContainerProps{
-    text:string
+interface genresContainerProps {
+  text: string;
 }
 
-
-export default function Genres({text}:genresContainerProps) {
+const Genres: React.FC<genresContainerProps> = ({ text }) => {
   return (
     <div className={styles.genresContainer}>
-        <Genre text={text}/>
+      <Genre text={text} />
     </div>
-  )
-}
+  );
+};
+
+export default Genres;

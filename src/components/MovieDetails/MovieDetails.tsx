@@ -78,7 +78,6 @@ function MovieDetails() {
     getTrailer();
   }, [paramsType, id, tab]);
 
-  console.log(details, "detelj");
 
   return (
     <div className={styles.detailsHeaderContainer}>

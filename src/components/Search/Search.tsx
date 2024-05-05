@@ -24,8 +24,6 @@ function Search() {
   }, [keywordSearch, searchRef]);
 
 
-
-
    useEffect(() => {
       if(inputValue.length){
         setKeywordSearch(inputValue)
@@ -46,7 +44,7 @@ function Search() {
   return (
     <div className={styles.inputContainer}>
       <Icon className={styles.inputIcon} icon="material-symbols:search" width="24" height="24"  style={{color: '#fff'}} />
-      <input onChange={(e)=>setInputValue(e.target.value)} className={styles.inputField} placeholder='Search For Movies' ref={searchRef}/>
+      <input onChange={(e)=>setInputValue(e.target.value)} className={styles.inputField} placeholder='Search For Movies,TV Shows' ref={searchRef}/>
     </div>
   )
 }

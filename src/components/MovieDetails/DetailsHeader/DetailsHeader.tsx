@@ -9,7 +9,8 @@ interface DetailsHeaderInterface{
     details:object;
     image: string;
 }
-function DetailsHeader({trailer,details,image}:DetailsHeaderInterface) {
+
+const DetailsHeader:React.FC<DetailsHeaderInterface>=({trailer,details,image}) =>{
   return (
     <header className={styles.detailsHeader}>
     {" "}
