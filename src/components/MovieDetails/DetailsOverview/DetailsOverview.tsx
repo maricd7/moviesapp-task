@@ -20,7 +20,6 @@ interface DetailsOverviewInterface{
 }
 
 const  DetailsOverview : React.FC<DetailsOverviewInterface> = ({details, genresArray,})=> {
-  console.log(details)
     return (
       <div className={styles.overview}>
         <DetailsHeading text={details.original_name || details.name ||details.title || ''} />

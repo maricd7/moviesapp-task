@@ -6,8 +6,6 @@ interface GenreProps{
 }
 
 function Genre({text}:GenreProps) {
-    console.log('logger')
-    console.log(text, 'textt')
   return (
     <span className={styles.genre}>{text}</span >
   )

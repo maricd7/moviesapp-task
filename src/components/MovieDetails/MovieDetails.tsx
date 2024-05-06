@@ -61,8 +61,6 @@ function MovieDetails() {
 
   //laod data on mount
   useEffect(() => {
-    console.log(params);
-    console.log("params.type", params.type);
     fetchData();
     getTrailer();
   }, [paramsType, id, tab]);

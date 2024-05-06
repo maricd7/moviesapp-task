@@ -1,9 +1,12 @@
 import React from "react";
-import MovieCard from "../MovieCard/MovieCard";
+// import MovieCard from "../MovieCard/MovieCard";
 import { useMovieContext } from "../../contexts/MoviesContext";
 import Tab from "../Tab/Tab";
 import styles from "./ResultsGrid.module.css";
 import { Link } from "react-router-dom";
+import MovieCard from "../MovieCard/MovieCard";
+
+
 
 function ResultsGrid() {
   //interface for card
@@ -22,7 +25,6 @@ function ResultsGrid() {
 
   // getting data from context
   const { data } = useMovieContext();
-  console.log("data data data", data);
   return (
     <div className={styles.mainContainer}>
       <Tab />

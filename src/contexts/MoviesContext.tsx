@@ -58,7 +58,6 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
 
     // Loading content condition
     useEffect(() => {
-        console.log('keyword', keywordSearch)
         if (tab === 'movies') {
             keywordSearch.length ? searchMovies(keywordSearch) :getMovies();
             setType('movie')
