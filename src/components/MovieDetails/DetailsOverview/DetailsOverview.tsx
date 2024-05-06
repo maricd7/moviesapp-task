@@ -10,18 +10,20 @@ interface Details{
     name?: string;
     overview?: string;
     text:string;
+    title:string;
 }
 interface DetailsOverviewInterface{
     details:Details;
     original_name:string;
     text:string;
-    genresArray:{name:string}[]
+    genresArray:{name:string}[];
 }
 
-const  DetailsOverview : React.FC<DetailsOverviewInterface> = ({details, genresArray})=> {
+const  DetailsOverview : React.FC<DetailsOverviewInterface> = ({details, genresArray,})=> {
+  console.log(details)
     return (
       <div className={styles.overview}>
-        <DetailsHeading text={details.original_name || details.name || ''} />
+        <DetailsHeading text={details.original_name || details.name ||details.title || ''} />
         <div className={styles.genreContainer}>
           {genresArray.map((genre: { name: string }, index: number) => (
             <Genre key={index} text={genre.name} />

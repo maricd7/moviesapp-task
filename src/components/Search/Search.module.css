@@ -1,6 +1,9 @@
 .inputContainer{
     position: relative;
     margin: 2rem 0 0 0;
+    width: 16rem;
+    display: flex;
+    justify-content: center;
 }
 .inputField{
     border-radius: 5rem;
@@ -8,6 +11,8 @@
     border: 1px solid #202020;
     background-color: #414141;
     color: white;
+    width: 14rem;
+
 }
 .inputField:focus {
     border: 1px solid #ED213A;

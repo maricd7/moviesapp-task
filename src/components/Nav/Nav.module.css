@@ -1,0 +1,18 @@
+.navBar{
+    margin:2rem 5rem 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    color: #fff;
+}
+.highlight{
+    color: #ED213A;
+}
+
+
+/* responsiveness */
+@media screen and (max-width: 800px) {
+    .navBar{margin: 1rem;}
+  }

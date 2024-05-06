@@ -1,21 +1,12 @@
 import React,{} from "react";
-import { useNavigate } from "react-router-dom";
-
 import MovieDetails from "../components/MovieDetails/MovieDetails";
+import Nav from "../components/Nav/Nav";
 
-function Details() {
-   
-  const navigate = useNavigate();
 
-  const goBack = () => {
-    navigate(-1); 
-  };
-
+function Details(){
   return (
     <div className="details_container">
-        <nav>
-          <button onClick={goBack}>Back</button>
-        </nav>
+        <Nav />
         <main>
         {<MovieDetails /> }
         </main>

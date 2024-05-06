@@ -11,3 +11,14 @@
     list-style-type:none;
     gap: 1rem;
 }
+
+
+/* reponsiveness  */
+@media screen and (max-width: 1280px) {
+    .cardsContainer{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       padding: 0;
+    }
+  }

@@ -71,13 +71,13 @@ function MovieDetails() {
   return (
     <div className={styles.detailsHeaderContainer}>
       {details ? (
-        <div>
+        <div className={styles.headerDetails}>
           <DetailsHeader
             trailer={trailer}
             details={details}
             image={"https://image.tmdb.org/t/p/w500/" + details.backdrop_path}
           />
-          {details && <DetailsOverview details={details}  genresArray={genres} original_name={details.original_name || details.name || ''} text={details.original_name || details.name} />}
+          {details && <DetailsOverview details={details}  genresArray={genres} original_name={details.original_name || details.name || ''}  text={details.original_name || details.name} />}
         </div>
       ) : (
         <>Loading</>

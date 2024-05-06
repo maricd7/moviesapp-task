@@ -5,5 +5,12 @@
     justify-content: center;
     align-items: center;
     gap:2rem;
-    margin: 5rem;
+    /* width: 100%; */
+    margin: 0 5rem 0 5rem;
 }
+
+/* responsiveness */
+@media screen and (max-width: 800px) {
+    .detailsHeaderContainer{margin: 1rem;}
+  }
+

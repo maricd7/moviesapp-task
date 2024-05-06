@@ -8,7 +8,7 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ name, image, overview }) => {
-  const text = overview.substring(0, 47) + "...";
+  const text = overview.substring(0, 77) + "...";
   return (
     <div className={styles.cardMain}>
       <img className={styles.image} src={image} />
