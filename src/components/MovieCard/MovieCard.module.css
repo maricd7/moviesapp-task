@@ -5,32 +5,74 @@
     color: white;
     font-weight: 600;
     /* min-height: 6rem; */
+    z-index: 2;
+    position: relative;
 }
 .image{
-    width: 10rem;
-    border-radius: 0.5rem;
-    height: 14rem;
+    width:100%;
+    border-radius: 1rem;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 .cardMain{
     padding:1rem;
     border-radius: 1rem;
     background: linear-gradient(180deg, #1a1a1a 0%, #333333 100%);
-    width: 10rem;
+    width: 14rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 28rem;
     animation: 0.4s ease-out 0s 1 scale-up-center;
-    background: #333;
+    background: none;
     padding: 1.5rem;
+    border: 1px solid #4d4d4d;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .cardOverview{
     color: white;
     text-decoration: none;
     height: 64px;
+    z-index: 2;
+    display: none;
 }
-.cardMain:hover {
+
+.rating{
+    color: white;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+
+.overlay{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(14,14,14,0) 95%);
+    bottom: 0;
+    left: 0;
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+
+/* hovers  */
+.cardMain:hover  {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.cardMain:hover .cardOverview {
+    display: block;
+}
+.cardMain:hover .overlay{
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(14,14,14,0.4) 95%);
 }
 
 /* animations  */

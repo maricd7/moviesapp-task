@@ -19,7 +19,7 @@ function ResultsGrid() {
     poster_path: string;
     title: string;
     overview:string;
-    
+    vote_average:number;
   }
  const {type} =  useMovieContext()
 
@@ -38,6 +38,7 @@ function ResultsGrid() {
                 name={entry.name || entry.original_title || entry.title}
                 image={"https://image.tmdb.org/t/p/w500/" + entry.poster_path}
                 overview={entry.overview}
+                rating={entry.vote_average}
               />
               </Link>
             </li>

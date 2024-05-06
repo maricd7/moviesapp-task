@@ -16,7 +16,7 @@ function Nav(){
   return (
     <nav className={styles.navBar}>
         <BackButton onClick={goBack}/>
-        <h2 className={styles.logo}>Movie&TV <span className={styles.highlight}>Explorer</span></h2>
+        <h2 className={styles.logo}>Screen<span className={styles.highlight}>Quest</span></h2>
     </nav>
   )
 }
