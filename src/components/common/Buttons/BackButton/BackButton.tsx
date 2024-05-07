@@ -7,7 +7,10 @@ interface BackButtonProps{
 }
 const BackButton :React.FC<BackButtonProps> = ({onClick})=> {
   return (
-    <Icon onClick={onClick} className={styles.backButton} icon="material-symbols:arrow-back" width="24" height="24"  style={{color: '#fff'}} />
+    <div onClick={onClick} className={styles.backButtonContainer}>
+      <Icon  className={styles.backButton} icon="material-symbols:arrow-back" width="24" height="24"  style={{color: '#fff'}} />
+      Go Back
+    </div>
   )
 }
 

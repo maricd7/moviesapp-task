@@ -1,3 +1,13 @@
-.backButton{
+.backButtonContainer{
+    padding: 0.5rem 1rem;
+    background-color: #ED213A;
+    border-radius: 500rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     cursor: pointer;
+}
+.backButtonContainer:hover{
+    background-color: #831724;
 }
