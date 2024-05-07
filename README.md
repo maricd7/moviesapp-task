@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 #To run this code on your machine
+
 1.Clone  repository
 
 2.Navigate to moviesapp-task directory
