@@ -1,0 +1,11 @@
+.initial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchingPar, .noResults{
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+}

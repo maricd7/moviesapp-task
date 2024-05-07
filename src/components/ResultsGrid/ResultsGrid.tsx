@@ -5,7 +5,7 @@ import Tab from "../Tab/Tab";
 import styles from "./ResultsGrid.module.css";
 import { Link } from "react-router-dom";
 import MovieCard from "../MovieCard/MovieCard";
-import Loading from "../common/Loading/Loading";
+import Searching from "../common/Searching/Searching";
 
 
 
@@ -25,12 +25,12 @@ function ResultsGrid() {
  const {type} =  useMovieContext()
 
   // getting data from context
-  const { data } = useMovieContext();
+  const { data,keywordSearch } = useMovieContext();
   return (
     <div className={styles.mainContainer}>
       <Tab />
       <ul className={styles.cardsContainer}>
-        {data.length ? (
+        {data.length && (
           data.map((entry: Movie, index: number) => (
             <li key={index}>
               <Link to={`/details/${type}/${entry.id}`}>
@@ -43,10 +43,9 @@ function ResultsGrid() {
               </Link>
             </li>
           ))
-        ) : (
-          <Loading/>
         )}
       </ul>
+      {!data.length && <Searching/>}
     </div>
   );
 }
