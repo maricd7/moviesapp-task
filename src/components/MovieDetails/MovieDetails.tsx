@@ -5,6 +5,7 @@ import styles from "./MovieDetails.module.css";
 import { useParams } from "react-router-dom"; 
 import DetailsHeader from "./DetailsHeader/DetailsHeader";
 import DetailsOverview from "./DetailsOverview/DetailsOverview";
+import Backdrop from "./Backdrop/Backdrop";
 
 
 function MovieDetails() {
@@ -77,9 +78,11 @@ function MovieDetails() {
           />
           {details && <DetailsOverview details={details}  genresArray={genres} original_name={details.original_name || details.name || ''}  text={details.original_name || details.name} />}
         </div>
+       
       ) : (
         <>Loading</>
       )}
+       {details && <Backdrop path={details.backdrop_path}/>}
     </div>
   );
 }

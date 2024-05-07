@@ -1,5 +1,5 @@
 .detailsHeaderContainer{
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,6 +7,11 @@
     gap:2rem;
     /* width: 100%; */
     margin: 0 5rem 0 5rem;
+    max-width: 50rem;
+
+}
+.headerDetails{
+    z-index: 2;
 }
 
 /* responsiveness */
