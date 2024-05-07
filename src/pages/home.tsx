@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="container">
       <header>
-        <Heading />
+        <Heading text='ScreenQuest'/>
         <SubHeading />
       </header>
       <main>

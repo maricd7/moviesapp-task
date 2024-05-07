@@ -1,8 +1,12 @@
 import React from 'react'
 import styles from './Heading.module.css'
-function Heading() {
+
+interface HeadingProps{
+  text:string;
+}
+const Heading :React.FC<HeadingProps> =({text})=> {
   return (
-    <h1 className={styles.mainHeading}>ScreenQuest</h1>
+    <h1 className={styles.mainHeading}>{text}</h1>
   )
 }
 

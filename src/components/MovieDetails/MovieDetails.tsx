@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useMovieContext } from "../../contexts/MoviesContext";
 import styles from "./MovieDetails.module.css";
-import { useParams } from "react-router-dom"; 
+import { useNavigate, useParams } from "react-router-dom"; 
 import DetailsHeader from "./DetailsHeader/DetailsHeader";
 import DetailsOverview from "./DetailsOverview/DetailsOverview";
 import Backdrop from "./Backdrop/Backdrop";
@@ -17,6 +17,7 @@ function MovieDetails() {
   const params = useParams();
   const [paramsType, setParamsType] = useState(params.type);
   const [genres, setGenres] = useState<{ name: string }[]>([]);
+  const navigate = useNavigate()
 
   //getting data for movie/tv show
   const fetchData = async () => {
@@ -35,10 +36,12 @@ function MovieDetails() {
         setDetails(response.data);
         setGenres(response.data?.genres);
       } else {
+        
         console.log("Error response");
       }
     } catch (error) {
       console.error(error);
+      navigate('/404')
     }
   };
 

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import { MovieContextProvider } from './contexts/MoviesContext';
 import Details from './pages/details';
+import NotFound from './pages/404';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path="/details/:type/:id" element={<Details/>}></Route>
+            <Route path="/404" element={<NotFound/>}></Route>
           </Routes>
           </MovieContextProvider>
         </Router>
