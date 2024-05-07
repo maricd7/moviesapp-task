@@ -5,6 +5,7 @@ import Tab from "../Tab/Tab";
 import styles from "./ResultsGrid.module.css";
 import { Link } from "react-router-dom";
 import MovieCard from "../MovieCard/MovieCard";
+import Loading from "../common/Loading/Loading";
 
 
 
@@ -28,7 +29,6 @@ function ResultsGrid() {
   return (
     <div className={styles.mainContainer}>
       <Tab />
-      
       <ul className={styles.cardsContainer}>
         {data.length ? (
           data.map((entry: Movie, index: number) => (
@@ -44,7 +44,7 @@ function ResultsGrid() {
             </li>
           ))
         ) : (
-          <span>Loading</span>
+          <Loading/>
         )}
       </ul>
     </div>

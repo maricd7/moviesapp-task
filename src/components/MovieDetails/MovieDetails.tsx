@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import DetailsHeader from "./DetailsHeader/DetailsHeader";
 import DetailsOverview from "./DetailsOverview/DetailsOverview";
 import Backdrop from "./Backdrop/Backdrop";
+import Loading from "../common/Loading/Loading";
 
 
 function MovieDetails() {
@@ -80,7 +81,7 @@ function MovieDetails() {
         </div>
        
       ) : (
-        <>Loading</>
+        <><Loading/></>
       )}
        {details && <Backdrop path={details.backdrop_path}/>}
     </div>
