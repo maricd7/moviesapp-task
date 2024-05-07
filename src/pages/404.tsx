@@ -1,6 +1,5 @@
 import React from 'react'
 import Heading from '../components/common/Heading/Heading'
-import BackButton from '../components/common/Buttons/BackButton/BackButton'
 import { useNavigate } from 'react-router-dom'
 
 

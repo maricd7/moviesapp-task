@@ -4,6 +4,9 @@
 .videoTrailer{
     width: 100%;
 }
+.videoTrailer iframe{
+border-radius: 1rem;
+}
 .overview{
     width: 50%;
 }

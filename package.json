@@ -2,11 +2,9 @@
   "name": "moviesapp-task",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.96",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
@@ -18,7 +16,6 @@
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.1",
     "react-youtube": "^10.1.0",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -46,6 +43,13 @@
     ]
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.1"
+    "@babel/preset-typescript": "^7.24.1",
+    "@iconify/react": "^4.1.1",
+    "@testing-library/react": "^15.0.6",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "react-test-renderer": "^18.3.1",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
   }
 }
