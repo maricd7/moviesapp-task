@@ -9,12 +9,12 @@ interface MovieCardProps {
   rating:number
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ name, image, overview,rating }) => {
+const MovieCard = ({ name, image, overview,rating }:MovieCardProps) => {
   const text = overview.substring(0, 100) + "...";
   let ratingFixed = rating.toFixed(1)
   return (
     <div className={styles.cardMain}>
-      <img className={styles.image} src={image} />
+      <img alt="Card Poster" className={styles.image} src={image} />
       <h2 className={styles.title}>{name}</h2>
       <p className={styles.cardOverview}>{text}</p>
       <p className={styles.rating}><Icon icon="material-symbols:star-rate" width="24" height="24"  style={{color: '#ffb83d'}} />{ratingFixed}</p>

@@ -19,7 +19,7 @@ interface DetailsOverviewInterface{
     genresArray:{name:string}[];
 }
 
-const  DetailsOverview : React.FC<DetailsOverviewInterface> = ({details, genresArray,})=> {
+const  DetailsOverview  = ({details, genresArray,}:DetailsOverviewInterface)=> {
     return (
       <div className={styles.overview}>
         <DetailsHeading text={details.original_name || details.name ||details.title || ''} />

@@ -6,10 +6,10 @@ interface BackdropProps{
 }
 
 
-const Backdrop : React.FC<BackdropProps> = ({path})=> {
+const Backdrop  = ({path}:BackdropProps)=> {
   return (
     <div>
-        <img src={"https://image.tmdb.org/t/p/w1280/" + path} className={styles.backdropImage}/>
+        <img alt='BackDrop' src={"https://image.tmdb.org/t/p/w1280/" + path} className={styles.backdropImage}/>
         <div className={styles.backdropOverlay}/></div>
   )
 }

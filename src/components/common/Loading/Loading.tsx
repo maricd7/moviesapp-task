@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Loading.module.css";
 import { Icon } from "@iconify/react";
 
-function Loading() {
+const Loading = () => {
   return (
     <div className={styles.loadingContainer}>
       <span className={styles.loadingText}>Loading</span>

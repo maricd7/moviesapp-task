@@ -1,11 +1,8 @@
 import React from "react";
-import ResultsGrid from "../components/ResultsGrid/ResultsGrid";
-import Heading from "../components/common/Heading/Heading";
-import SubHeading from "../components/common/SubHeading/SubHeading";
-import Search from "../components/Search/Search";
-import Footer from "../components/Footer/Footer";
+import { Heading,SubHeading } from "../components/common";
+import { Footer,Search,ResultsGrid } from "../components";
 
-function Home() {
+const Home = () => {
   return (
     <div className="container">
       <header>

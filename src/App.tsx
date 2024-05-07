@@ -1,12 +1,10 @@
 
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
+import { Home,Details,NotFound} from './pages';
 import { MovieContextProvider } from './contexts/MoviesContext';
-import Details from './pages/details';
-import NotFound from './pages/404';
 
-function App() {
+const  App = ()=> {
   return (
     <div className="App">
         <Router>
@@ -15,6 +13,7 @@ function App() {
             <Route path='/' element={<Home/>}></Route>
             <Route path="/details/:type/:id" element={<Details/>}></Route>
             <Route path="/404" element={<NotFound/>}></Route>
+            <Route path="*" element={<NotFound />}/>
           </Routes>
           </MovieContextProvider>
         </Router>

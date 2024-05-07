@@ -1,9 +1,9 @@
 import React from "react";
-import MovieDetails from "../components/MovieDetails/MovieDetails";
-import Nav from "../components/Nav/Nav";
-import Footer from "../components/Footer/Footer";
+import { MovieDetails,Footer,Nav } from "../components";
 
-function Details() {
+
+
+const Details = ()=> {
   return (
     <div className="details_container">
       <Nav />

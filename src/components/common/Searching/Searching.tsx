@@ -4,15 +4,19 @@ import styles from './Searching.module.css'
 import { useMovieContext } from '../../../contexts/MoviesContext'
 
 
-function Searching() {
+const Searching = () => {
     const [noresults,setNoresults] = useState(false)
     const inputValue = useMovieContext()
+
+    
     //function if there is no matching results
     const toggleNoResults = ()=>{
-      setTimeout(()=>{
+     const timer =  setTimeout(()=>{
         setNoresults(true)
         console.log('timeout done')
       },3500)
+
+      return () => clearTimeout(timer); 
     }
   
     useEffect(()=>{

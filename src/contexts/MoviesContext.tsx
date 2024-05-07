@@ -126,10 +126,10 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
           
           axios
             .request(options)
-            .then(function (response) {
+            .then((response)=> {
               setData(response.data?.results)
             })
-            .catch(function (error) {
+            .catch((error) =>{
               console.error(error);
             });
     }
@@ -149,11 +149,11 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
           
           axios
             .request(options)
-            .then(function (response) {
+            .then((response) =>{
               console.log(response.data);
               setData(response.data?.results)
             })
-            .catch(function (error) {
+            .catch((error) =>{
               console.error(error);
             });
     }

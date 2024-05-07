@@ -5,7 +5,7 @@ interface GenreProps{
     text:string;
 }
 
-function Genre({text}:GenreProps) {
+const Genre =({text}:GenreProps)=> {
   return (
     <span className={styles.genre}>{text}</span >
   )

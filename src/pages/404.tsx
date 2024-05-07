@@ -1,9 +1,9 @@
 import React from 'react'
-import Heading from '../components/common/Heading/Heading'
+import { Heading } from '../components/common'
 import { useNavigate } from 'react-router-dom'
 
 
-function NotFound() {
+const NotFound = () => {
     const navigate = useNavigate()
   return (
     <div className='errorpage'>

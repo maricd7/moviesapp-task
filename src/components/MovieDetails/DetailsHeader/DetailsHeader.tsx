@@ -10,12 +10,13 @@ interface DetailsHeaderInterface{
     image: string;
 }
 
-const DetailsHeader:React.FC<DetailsHeaderInterface>=({trailer,details,image}) =>{
+const DetailsHeader=({trailer,details,image}:DetailsHeaderInterface) =>{
   return (
     <header className={styles.detailsHeader}>
     {" "}
     {!trailer && details ? (
       <img
+        alt='Header'
         className={styles.headerImage}
         src={image}
       />

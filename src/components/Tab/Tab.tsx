@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useMovieContext } from "../../contexts/MoviesContext";
 import styles from "./Tab.module.css";
 
-export default function Tab() {
+
+
+const Tab = () => {
   const { setTab, setType, tab } = useMovieContext();
   const [activeTab, setActiveTab] = useState("shows");
+
+
   const handleClick = (tab: string) => {
     setTab(tab);
     setActiveTab(tab);
@@ -26,3 +30,4 @@ export default function Tab() {
     </div>
   );
 }
+export default  Tab;

@@ -3,7 +3,7 @@ import styles from './DetailsHeading.module.css'
 interface DetailsHeadingProps {
     text:string;
 }
-function DetailsHeading({text}:DetailsHeadingProps) {
+const DetailsHeading =({text}:DetailsHeadingProps)=> {
   return (
     <h2 className={styles.detailsHeading}>{text}</h2>
   )

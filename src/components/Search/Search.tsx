@@ -4,18 +4,21 @@ import {Icon} from '@iconify/react'
 import { useMovieContext } from '../../contexts/MoviesContext'
 
 
-function Search() {
+const Search = () => {
   const {searchMovies,searchShows,getMovies,getShows,tab, setKeywordSearch,keywordSearch} = useMovieContext()
   const [inputValue,setInputValue] = useState(keywordSearch || '')
   
   const searchRef = React.useRef<HTMLInputElement>(null)
 
   //handle search function
-  function handleSearch(){
+  const handleSearch = () =>{
     if(inputValue  && inputValue?.length >= 3){
       tab ==='movies' ? searchMovies(inputValue) : searchShows(inputValue)
     }
   }
+
+
+  // check search keyword on mount 
   useEffect(() => {
     if (keywordSearch.length && searchRef.current) { 
       console.log(inputValue);
@@ -28,7 +31,7 @@ function Search() {
       if(inputValue.length >= 3){
         setKeywordSearch(inputValue)
         const timer = setTimeout(()=>{
-          // console.log('search started after 1 second')
+
           handleSearch()
         },1000)
         

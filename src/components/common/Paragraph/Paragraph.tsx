@@ -6,8 +6,9 @@ interface ParagraphProps {
     text:string;
 }
 
-export default function Paragraph({text}:ParagraphProps) {
+const Paragraph = ({text}:ParagraphProps)=> {
   return (
     <p className={styles.paragraph}>{text}</p>
   )
 }
+export default Paragraph

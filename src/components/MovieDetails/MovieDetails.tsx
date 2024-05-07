@@ -3,13 +3,14 @@ import axios from "axios";
 import { useMovieContext } from "../../contexts/MoviesContext";
 import styles from "./MovieDetails.module.css";
 import { useNavigate, useParams } from "react-router-dom"; 
-import DetailsHeader from "./DetailsHeader/DetailsHeader";
-import DetailsOverview from "./DetailsOverview/DetailsOverview";
-import Backdrop from "./Backdrop/Backdrop";
+import { DetailsHeader } from "./DetailsHeader";
+import { DetailsOverview } from "./DetailsOverview";
+import { Backdrop } from "./Backdrop";
 import Loading from "../common/Loading/Loading";
 
 
-function MovieDetails() {
+const MovieDetails = () => {
+  
   const { tab } = useMovieContext();
   const { id } = useParams(); // Use useParams to get type param to have consistent loads since some ids are the same for movies and tv
   const [details, setDetails] = useState<any>(null);
