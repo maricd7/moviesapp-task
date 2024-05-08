@@ -27,7 +27,7 @@ const Search = () => {
   }, [keywordSearch, searchRef]);
 
 
-   useEffect(() => {
+  useEffect(() => {
       if(inputValue.length >= 3){
         setKeywordSearch(inputValue)
         const timer = setTimeout(()=>{
@@ -40,6 +40,7 @@ const Search = () => {
       }
       //load top rated on mount if there is no input
       else{
+        setKeywordSearch(inputValue)
         tab === 'shows' ? getShows() :getMovies()
       }
 
