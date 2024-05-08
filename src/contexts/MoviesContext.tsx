@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect, Dispa
 import axios from "axios";
 import { DataInterface } from "../types/DataInterface";
 
+
 // Context data type
 interface MovieContextType {
     data: DataInterface[];
@@ -138,7 +139,7 @@ export const MovieContextProvider: React.FC<{ children: ReactNode }> = ({ childr
           axios
             .request(options)
             .then((response) =>{
-              console.log(response.data);
+            //   console.log(response.data);
               setData(response.data?.results)
             })
             .catch((error) =>{
