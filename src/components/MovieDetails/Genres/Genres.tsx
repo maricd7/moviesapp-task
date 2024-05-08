@@ -6,7 +6,7 @@ interface genresContainerProps {
   text: string;
 }
 
-const Genres = ({ text }:genresContainerProps) => {
+const Genres = ({ text }: genresContainerProps) => {
   return (
     <div className={styles.genresContainer}>
       <Genre text={text} />

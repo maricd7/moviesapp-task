@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
 }
+
 .inputField{
     border-radius: 5rem;
     padding: 1rem 2rem;
@@ -14,9 +15,11 @@
     width: 14rem;
 
 }
+
 .inputField:focus {
     border: 1px solid #ED213A;
 }
+
 .inputIcon{
     position: absolute;
     top: 50%;

@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useMovieContext } from "../../contexts/MoviesContext";
 import styles from "./Tab.module.css";
 
-
-
 const Tab = () => {
   const { setTab, setType, tab } = useMovieContext();
   const [activeTab, setActiveTab] = useState("shows");
-
 
   const handleClick = (tab: string) => {
     setTab(tab);
@@ -21,13 +18,19 @@ const Tab = () => {
   }, []);
   return (
     <div className={styles.tabContainer}>
-      <button className={`${styles.tabBtn} ${activeTab === "shows" ? styles.active : ""}`} onClick={() => handleClick("shows")}>
+      <button
+        className={`${styles.tabBtn} ${activeTab === "shows" ? styles.active : ""}`}
+        onClick={() => handleClick("shows")}
+      >
         TV Shows
       </button>
-      <button className={`${styles.tabBtn} ${activeTab === "movies" ? styles.active : ""}`} onClick={() => handleClick("movies")}>
+      <button
+        className={`${styles.tabBtn} ${activeTab === "movies" ? styles.active : ""}`}
+        onClick={() => handleClick("movies")}
+      >
         Movies
       </button>
     </div>
   );
-}
-export default  Tab;
+};
+export default Tab;

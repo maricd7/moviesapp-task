@@ -1,9 +1,7 @@
 import React from "react";
-import { MovieDetails,Footer,Nav } from "../components";
+import { MovieDetails, Footer, Nav } from "../components";
 
-
-
-const Details = ()=> {
+const Details = () => {
   return (
     <div className="details_container">
       <Nav />
@@ -11,6 +9,6 @@ const Details = ()=> {
       <Footer />
     </div>
   );
-}
+};
 
 export default Details;
