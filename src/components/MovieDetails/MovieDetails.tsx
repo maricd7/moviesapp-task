@@ -7,19 +7,19 @@ import { DetailsHeader } from "./DetailsHeader";
 import { DetailsOverview } from "./DetailsOverview";
 import { Backdrop } from "./Backdrop";
 import Loading from "../common/Loading/Loading";
-
+import { MovieDetailsInterface,Genre } from "../../types/MovieDetailsInterface";
 
 const MovieDetails = () => {
   
   const { tab } = useMovieContext();
   const { id } = useParams(); // Use useParams to get type param to have consistent loads since some ids are the same for movies and tv
-  const [details, setDetails] = useState<any>(null);
+  const [details, setDetails] =  useState<MovieDetailsInterface  | null>(null);
   const [trailer, setTrailer] = useState("");
   const params = useParams();
   const [paramsType, setParamsType] = useState(params.type);
-  const [genres, setGenres] = useState<{ name: string }[]>([]);
+  const [genres, setGenres] = useState<Genre[]>([]);
   const navigate = useNavigate()
-
+  console.log(details)
   //getting data for movie/tv show
   const fetchData = async () => {
     try {

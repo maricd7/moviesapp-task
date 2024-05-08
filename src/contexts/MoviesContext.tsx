@@ -1,18 +1,6 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect, Dispatch, SetStateAction } from "react";
 import axios from "axios";
-
-// Define the interface for each movie or show
-interface DataInterface {
-    id: number;
-    name: string;
-    image: string;
-    description: string;
-    original_title:string;
-    poster_path:string;
-    title:string;
-    overview:string;
-    vote_average:number;
-}
+import { DataInterface } from "../types/DataInterface";
 
 // Context data type
 interface MovieContextType {
