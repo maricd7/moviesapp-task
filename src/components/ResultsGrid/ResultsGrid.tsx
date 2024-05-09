@@ -16,7 +16,8 @@ const ResultsGrid = () => {
     <div className={styles.mainContainer}>
       <Tab />
       <ul className={styles.cardsContainer}>
-        {data.length &&
+        {data &&
+          Array.isArray(data) &&
           data.map((entry: Movie, index: number) => (
             <li key={index}>
               <Link to={`/details/${type}/${entry.id}`}>
