@@ -16,6 +16,7 @@ const Tab = () => {
   useEffect(() => {
     tab === "movies" ? setActiveTab(tab) : setActiveTab("shows");
   }, []);
+
   return (
     <div className={styles.tabContainer}>
       <button
