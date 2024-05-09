@@ -21,6 +21,7 @@ const MovieDetails = () => {
   const paramsType = params.type;
   const [genres, setGenres] = useState<Genre[]>([]);
   const navigate = useNavigate();
+
   //getting data for movie/tv show
   const fetchData = async () => {
     try {
@@ -67,6 +68,7 @@ const MovieDetails = () => {
 
   //laod data on mount
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchData();
     getTrailer();
   }, [paramsType, id, tab]);

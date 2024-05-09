@@ -13,9 +13,9 @@ const Nav = () => {
   return (
     <nav className={styles.navBar}>
       <BackButton onClick={goBack} />
-      <h2 className={styles.logo}>
+      <a href="/" className={styles.logo}>
         Screen<span className={styles.highlight}>Quest</span>
-      </h2>
+      </a>
     </nav>
   );
 };

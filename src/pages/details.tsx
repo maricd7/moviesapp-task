@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieDetails, Footer, Nav } from "../components";
+import { MovieDetails } from "../components";
 import Layout from "../layout";
 
 const Details = () => {
