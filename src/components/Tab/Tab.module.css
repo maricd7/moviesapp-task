@@ -9,14 +9,14 @@
 }
 
 .active {
-  background: radial-gradient(circle 986.6px at 10% 20%, #ed213a 0%, #93291e);
+  background: #ed213a;
   color: white;
 }
 
 .tabContainer {
   margin: 2rem 0;
   display: flex;
-  background: radial-gradient(circle 986.6px at 10% 20%, #ed213a 0%, #93291e);
+  background: #ed213a;
   border-radius: 500rem;
   max-width: fit-content;
 }
