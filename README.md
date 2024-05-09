@@ -15,7 +15,7 @@ Live Demo : https://moviesapp-task.vercel.app/
 
 4.Create ".env.local" file in root directory
 
-5.Inside ".env.local" add api bearer token to value "REACT_APP_TMDB_TOKEN"
+5.Inside ".env.local" add api bearer token to key "REACT_APP_TMDB_TOKEN"
 
 6.Start the application using `npm start`
 
