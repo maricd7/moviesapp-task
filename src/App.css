@@ -33,6 +33,13 @@ a {
   height: 100vh;
 }
 
+.errorpage {
+  padding: 1rem;
+}
+.notfound-par {
+  text-align: center;
+}
+
 /* responsiveness */
 @media screen and (max-width: 800px) {
   .container {

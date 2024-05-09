@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <div className="errorpage">
+    <main className="errorpage">
       <Heading text="404 Page Not Found" />
-      <p>
+      <p className="notfound-par">
         We&apos;re sorry, but it seems you&apos;ve stumbled upon a page that
         doesn&apos;t exist.
       </p>
@@ -18,7 +18,7 @@ const NotFound = () => {
       >
         Back to Browsing
       </button>
-    </div>
+    </main>
   );
 };
 
