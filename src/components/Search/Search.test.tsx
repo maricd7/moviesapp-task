@@ -12,6 +12,7 @@ jest.mock("../../contexts/MoviesContext", () => ({
     tab: "movies",
     setKeywordSearch: jest.fn(),
     keywordSearch: "",
+    setData: jest.fn(),
   }),
 }));
 
