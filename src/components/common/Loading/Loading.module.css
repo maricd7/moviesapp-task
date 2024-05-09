@@ -1,12 +1,13 @@
-.loadingText{
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: white;
+.loadingText {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
 }
-.loadingContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    place-self: center; 
-    position: absolute;
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-self: center;
+  position: absolute;
 }

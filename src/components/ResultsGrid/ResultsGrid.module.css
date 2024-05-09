@@ -1,24 +1,23 @@
-.mainContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cardsContainer{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    list-style-type:none;
-    gap: 1rem;
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style-type: none;
+  gap: 1rem;
 }
-
 
 /* reponsiveness  */
 @media screen and (max-width: 1280px) {
-    .cardsContainer{
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: center;
-       padding: 0;
-    }
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
   }
+}

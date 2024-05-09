@@ -1,24 +1,22 @@
-.tabBtn{
-    padding: 0.5rem 2rem;
-    border-radius: 500rem;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    border: 0;
-    width: 10rem;
-}
-.active{
-    background: radial-gradient( circle 986.6px at 10% 20%, #ED213A 0%, #93291E );
-    color:white;
-}
-.tabContainer{
-    margin: 2rem 0;
-    display: flex;
-    background: radial-gradient( circle 986.6px at 10% 20%, #ED213A 0%, #93291E );
-    border-radius: 500rem;
-    max-width: fit-content;
-    
+.tabBtn {
+  padding: 0.5rem 2rem;
+  border-radius: 500rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: 0;
+  width: 10rem;
 }
 
+.active {
+  background: radial-gradient(circle 986.6px at 10% 20%, #ed213a 0%, #93291e);
+  color: white;
+}
 
-
+.tabContainer {
+  margin: 2rem 0;
+  display: flex;
+  background: radial-gradient(circle 986.6px at 10% 20%, #ed213a 0%, #93291e);
+  border-radius: 500rem;
+  max-width: fit-content;
+}

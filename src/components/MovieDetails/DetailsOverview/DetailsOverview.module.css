@@ -1,9 +1,10 @@
-.genreContainer{
-    display: flex;
-    gap:1rem;
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.overview{
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
+
+.genreContainer {
+  display: flex;
+  gap: 1rem;
 }

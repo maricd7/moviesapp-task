@@ -1,20 +1,23 @@
-.navBar{
-    margin:2rem 5rem 0 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    position: relative;
-}
-.logo{
-    color: #fff;
-}
-.highlight{
-    color: #ED213A;
+.navBar {
+  margin: 2rem 5rem 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  position: relative;
 }
 
+.logo {
+  color: #fff;
+}
+
+.highlight {
+  color: #ed213a;
+}
 
 /* responsiveness */
 @media screen and (max-width: 800px) {
-    .navBar{margin: 1rem;}
+  .navBar {
+    margin: 1rem;
   }
+}

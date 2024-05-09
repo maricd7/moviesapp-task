@@ -1,15 +1,19 @@
-.headerImage{
-    width: 100%;
+.headerImage {
+  width: 100%;
 }
-.videoTrailer{
-    width: 100%;
+
+.videoTrailer {
+  width: 100%;
 }
-.videoTrailer iframe{
-border-radius: 1rem;
+
+.videoTrailer iframe {
+  border-radius: 1rem;
 }
-.overview{
-    width: 50%;
+
+.overview {
+  width: 50%;
 }
-.detailsHeader{
-    width: 100%;
+
+.detailsHeader {
+  width: 100%;
 }
