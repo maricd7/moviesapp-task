@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 Live Demo : https://moviesapp-task.vercel.app/
+
 #To run this code on your machine
 
 1.Clone  repository
