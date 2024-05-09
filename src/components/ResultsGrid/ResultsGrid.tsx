@@ -5,20 +5,9 @@ import styles from "./ResultsGrid.module.css";
 import { Link } from "react-router-dom";
 import { MovieCard } from "../MovieCard";
 import Searching from "../common/Searching/Searching";
+import { Movie } from "../../types/MovieInterface";
 
 const ResultsGrid = () => {
-  //interface for card
-  interface Movie {
-    id: number;
-    name: string;
-    image: string;
-    description: string;
-    original_title: string;
-    poster_path: string;
-    title: string;
-    overview: string;
-    vote_average: number;
-  }
   const { type } = useMovieContext();
 
   // getting data from context

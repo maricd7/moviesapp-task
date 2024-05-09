@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@tanstack/react-query": "^5.35.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@types/node": "^16.18.96",
     "@types/react": "^18.3.1",

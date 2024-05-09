@@ -4,29 +4,9 @@ import React, {
   useContext,
   ReactNode,
   useEffect,
-  Dispatch,
-  SetStateAction,
 } from "react";
 import axios from "axios";
-import { DataInterface } from "../types/DataInterface";
-
-// Context data type
-interface MovieContextType {
-  data: DataInterface[];
-  setTab: (tab: string) => void;
-  tab: string;
-  type: string;
-  setData: (data: DataInterface[]) => void;
-  setType: (type: string) => void;
-  getMovies: () => void;
-  getShows: () => void;
-  searchMovies: (keywordSearch: string) => void;
-  searchShows: (keywordSearch: string) => void;
-  keywordSearch: string;
-  setKeywordSearch: (param: string) => void;
-  details: object;
-  setDetails: Dispatch<SetStateAction<object>>;
-}
+import { DataInterface, MovieContextType } from "../types/DataInterface";
 
 const MovieContext = createContext<MovieContextType>({
   data: [],

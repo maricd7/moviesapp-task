@@ -1,13 +1,14 @@
 import React from "react";
 import { MovieDetails, Footer, Nav } from "../components";
+import Layout from "../layout";
 
 const Details = () => {
   return (
-    <div className="details_container">
-      <Nav />
-      <main>{<MovieDetails />}</main>
-      <Footer />
-    </div>
+    <Layout>
+      <div className="details_container">
+        <main>{<MovieDetails />}</main>
+      </div>
+    </Layout>
   );
 };
 
