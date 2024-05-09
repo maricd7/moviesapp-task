@@ -12,6 +12,7 @@ const Search = () => {
     tab,
     setKeywordSearch,
     keywordSearch,
+    setData,
   } = useMovieContext();
   const [inputValue, setInputValue] = useState(keywordSearch || "");
 
@@ -32,6 +33,7 @@ const Search = () => {
   }, [keywordSearch, searchRef]);
 
   useEffect(() => {
+    setData([]);
     if (inputValue.length >= 3) {
       setKeywordSearch(inputValue);
       const timer = setTimeout(() => {
